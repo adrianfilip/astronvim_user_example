@@ -1,14 +1,14 @@
 return {
   {
     "catppuccin/nvim",
-    as = "catppuccin",
+    as = "",
     config = function()
       require("catppuccin").setup {}
     end,
   },
   {
     "folke/tokyonight.nvim",
-    as = "tokyonight",
+    as = "",
     config = function()
       require("tokyonight").setup {}
     end,
