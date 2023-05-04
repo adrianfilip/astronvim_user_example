@@ -61,12 +61,5 @@ return {
         group = nvim_metals_group,
       })
     end,
-  },
-  {
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    ft = { "sbt", "scala", "java" },
-    config = function()
-      require("lsp_lines").setup()
-    end,
-  },
+  }
 }
