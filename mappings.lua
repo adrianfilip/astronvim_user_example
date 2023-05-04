@@ -36,6 +36,7 @@ return {
     ["<leader>aw"] = {function() vim.diagnostic.setqflist({ severity = "W" }) end, desc = "All workspace warnings"},
     ["<leader>d"] = {vim.diagnostic.setloclist, desc = "Buffer diagnostics" },
     ["<leader>kf"] = {vim.lsp.buf.format, desc = "Format" },
+    ["<leader>lt"] = {require("lsp_lines").toggle, desc = "Toggle lsp_lines" },
     ["[c"] = {function() vim.diagnostic.goto_prev({ wrap = false }) end, desc = "Previous diagnostic" },
     ["]c"] = {function() vim.diagnostic.goto_next({ wrap = false }) end, desc = "Next diagnostic" },
     
