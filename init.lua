@@ -67,7 +67,7 @@ return {
     },
     plugins = {
       -- list of plugins to load always
-      "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
+      "https://git.sr.ht/~whynothugo/lsp_lines.nvim", lazy = false
     },
   },
   
