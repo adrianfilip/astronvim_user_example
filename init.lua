@@ -70,7 +70,7 @@ return {
   plugins = {
     {
       "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-      as = "lsp_lines",
+      as = "",
       config = function()
         require("lsp_lines").setup {}
       end,
