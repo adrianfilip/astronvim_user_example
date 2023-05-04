@@ -65,7 +65,6 @@ return {
   {
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     lazy = false,
-  --  ft = { "sbt", "scala", "java" },
     config = function()
       require("lsp_lines").setup()
     end,
