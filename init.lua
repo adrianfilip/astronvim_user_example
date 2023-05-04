@@ -65,18 +65,12 @@ return {
         disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
       },
     },
-  },
-  
-  plugins = {
-    {
-      "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-      as = "",
-      config = function()
-        require("lsp_lines").setup()
-      end,
+    plugins = {
+      -- list of plugins to load always
+      "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
     },
   },
-
+  
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
