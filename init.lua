@@ -65,10 +65,6 @@ return {
         disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
       },
     },
-    plugins = {
-      -- list of plugins to load always
-      "https://git.sr.ht/~whynothugo/lsp_lines.nvim", lazy = false
-    },
   },
   
   -- This function is run last and is a good place to configuring
