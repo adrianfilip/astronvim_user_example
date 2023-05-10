@@ -15,4 +15,32 @@ return {
       require("tokyonight").setup {}
     end,
   },
+  {
+    "ellisonleao/gruvbox.nvim",
+    lazy = false,
+    as = "gruvbox",
+    config = function()
+      require("gruvbox").setup {}
+    end,
+  },
+  {
+    'shaunsingh/nord.nvim',
+    lazy = false,
+    as = "nord",
+    config = function()
+      require("nord").set()
+    end,
+  },
+  {
+    'whatyouhide/vim-gotham',
+    lazy = false
+  },
+  {
+    "rktjmp/lush.nvim"
+  },
+  {
+    "briones-gabriel/darcula-solid.nvim",
+    requires = "rktjmp/lush.nvim",
+    lazy = false,
+  },
 }
