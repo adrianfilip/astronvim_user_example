@@ -19,8 +19,9 @@ return {
 
   -- Set colorscheme to use
   --colorscheme = "astrodark",
-  colorscheme = "catppuccin",
+  --colorscheme = "catppuccin",
   --colorscheme = "tokyonight",
+  colorscheme = "darcula-solid",
   
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -83,5 +84,6 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+    vim.g.astronav_tab_order = 'arrange'
   end,
 }
