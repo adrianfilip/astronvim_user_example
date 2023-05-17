@@ -11,7 +11,10 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
+          require("astronvim.utils.buffer").close(
+            bufnr)
+        end)
       end,
       desc = "Pick to close",
     },
@@ -20,26 +23,39 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-    ["<Tab>"] = {":bnext<CR>", desc = "Next buffer" },
-    ["<S-Tab>"] = {":bprevious<CR>", desc = "Previous buffer" },
-    ["gD"] = {vim.lsp.buf.definition, desc = "Go to definition" },
-    ["gi"] = {vim.lsp.buf.implementation, desc = "Go to implementation" },
-    ["K"] =  {vim.lsp.buf.hover, desc = "Hover" },
-    ["gr"] = {vim.lsp.buf.references, desc = "References" },
-    ["gds"] = {vim.lsp.buf.document_symbol, desc = "Document symbol" },
-    ["gws"] = {vim.lsp.buf.workspace_symbol, desc = "Workspace symbol" },
-    ["<leader>sh"] = {vim.lsp.buf.signature_help, desc = "Signature help" },
-    ["<leader>rn"] = {vim.lsp.buf.rename, desc = "Rename" },
-    ["<leader>ka"] = {vim.lsp.buf.code_action, desc = "K(C)ode action"},
-    ["<leader>aa"] = {vim.diagnostic.setqflist, desc = "All workspace diagnostics"},
-    ["<leader>ae"] = {function() vim.diagnostic.setqflist({ severity = "E" }) end, desc = "All workspace errors"},
-    ["<leader>aw"] = {function() vim.diagnostic.setqflist({ severity = "W" }) end, desc = "All workspace warnings"},
-    ["<leader>d"] = {vim.diagnostic.setloclist, desc = "Buffer diagnostics" },
-    ["<leader>kf"] = {vim.lsp.buf.format, desc = "Format" },
-    ["<leader>lt"] = {require("lsp_lines").toggle, desc = "Toggle lsp_lines" },
-    ["[c"] = {function() vim.diagnostic.goto_prev({ wrap = false }) end, desc = "Previous diagnostic" },
-    ["]c"] = {function() vim.diagnostic.goto_next({ wrap = false }) end, desc = "Next diagnostic" },
-    
+    -- this setup for Next/Previous buffer is not limited to windows in the current tab
+    --["<Tab>"] = {":bnext<CR>", desc = "Next buffer" },
+    --["<S-Tab>"] = {":bprevious<CR>", desc = "Previous buffer" },
+    -- this setup for Next/Previous buffer is limited to the windows in the current tab
+    ["<Tab>"] = {
+      function()
+        require("astronvim.utils.buffer")
+            .nav(vim.v.count > 0 and vim.v.count or 1)
+      end, desc = "Next buffer"
+    },
+    ["<S-Tab>"] = {
+      function()
+        require("astronvim.utils.buffer")
+            .nav(-(vim.v.count > 0 and vim.v.count or 1))
+      end, desc = "Previous buffer"
+    },
+    ["gD"] = { vim.lsp.buf.definition, desc = "Go to definition" },
+    ["gi"] = { vim.lsp.buf.implementation, desc = "Go to implementation" },
+    ["K"] = { vim.lsp.buf.hover, desc = "Hover" },
+    ["gr"] = { vim.lsp.buf.references, desc = "References" },
+    ["gds"] = { vim.lsp.buf.document_symbol, desc = "Document symbol" },
+    ["gws"] = { vim.lsp.buf.workspace_symbol, desc = "Workspace symbol" },
+    ["<leader>sh"] = { vim.lsp.buf.signature_help, desc = "Signature help" },
+    ["<leader>rn"] = { vim.lsp.buf.rename, desc = "Rename" },
+    ["<leader>ka"] = { vim.lsp.buf.code_action, desc = "K(C)ode action" },
+    ["<leader>aa"] = { vim.diagnostic.setqflist, desc = "All workspace diagnostics" },
+    ["<leader>ae"] = { function() vim.diagnostic.setqflist({ severity = "E" }) end, desc = "All workspace errors" },
+    ["<leader>aw"] = { function() vim.diagnostic.setqflist({ severity = "W" }) end, desc = "All workspace warnings" },
+    ["<leader>d"] = { vim.diagnostic.setloclist, desc = "Buffer diagnostics" },
+    ["<leader>kf"] = { vim.lsp.buf.format, desc = "Format" },
+    ["<leader>lt"] = { require("lsp_lines").toggle, desc = "Toggle lsp_lines" },
+    ["[c"] = { function() vim.diagnostic.goto_prev({ wrap = false }) end, desc = "Previous diagnostic" },
+    ["]c"] = { function() vim.diagnostic.goto_next({ wrap = false }) end, desc = "Next diagnostic" },
   },
   t = {
     -- setting a mapping to false will disable it
