@@ -43,4 +43,8 @@ return {
     requires = "rktjmp/lush.nvim",
     lazy = false,
   },
+  { "EdenEast/nightfox.nvim" , lazy = false},
+  {"savq/melange-nvim", lazy = false},
+  {"sainnhe/sonokai", lazy = false},
+  {"sainnhe/everforest", lazy = false},
 }
