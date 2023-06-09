@@ -21,8 +21,8 @@ return {
   --colorscheme = "catppuccin",
   --colorscheme = "tokyonight",
   --colorscheme = "darcula-solid",
-  --colorscheme = "nightfox",
-  colorscheme = "melange",
+  colorscheme = "nightfox",
+  --colorscheme = "melange",
   
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
