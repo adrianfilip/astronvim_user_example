@@ -1,8 +1,6 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.rust" },
-  --{ import = "astrocommunity.colorscheme.rose-pine" },
-  --{ import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.completion.copilot-lua" },
   { -- further customize the options set by the community
     "copilot.lua",
