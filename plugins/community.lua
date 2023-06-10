@@ -35,6 +35,7 @@ return {
       },
     },
   },
+  --shows a vertical column when I exceed colorcolumn limit of characters
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   {
     "m4xshen/smartcolumn.nvim",
