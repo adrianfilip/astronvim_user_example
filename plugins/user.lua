@@ -69,6 +69,5 @@ return {
       require("lsp_lines").setup()
     end,
   },
-  -- TODO - is this still needed?
   { 'kevinhwang91/nvim-bqf', ft = 'qf' }
 }
