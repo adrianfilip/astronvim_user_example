@@ -1,3 +1,11 @@
+require "telescope".setup {
+  pickers = {
+    colorscheme = {
+      enable_preview = true
+    }
+  }
+}
+
 return {
   {
     "folke/tokyonight.nvim",
@@ -16,17 +24,22 @@ return {
     end,
   },
   {
-    'shaunsingh/nord.nvim',
+    'maxmx03/solarized.nvim',
     lazy = false,
-    as = "nord",
     config = function()
-      require("nord").set()
+      vim.o.background = 'dark' -- or 'light'
+      vim.cmd.colorscheme 'solarized'
     end,
   },
-  {
-    'whatyouhide/vim-gotham',
-    lazy = false
-  },
+  -- {
+  --   "nordtheme/nord.nvim",
+  --   lazy = false,
+  -- },
+  -- {
+  --   'whatyouhide/vim-gotham',
+  --   lazy = false
+  -- },
+  -- needed by darcula-solid
   {
     "rktjmp/lush.nvim"
   },
@@ -35,8 +48,10 @@ return {
     requires = "rktjmp/lush.nvim",
     lazy = false,
   },
-  { "EdenEast/nightfox.nvim" , lazy = false},
+  { "EdenEast/nightfox.nvim", lazy = false},
   {"savq/melange-nvim", lazy = false},
   {"sainnhe/sonokai", lazy = false},
   {"sainnhe/everforest", lazy = false},
+  {"sainnhe/gruvbox-material",lazy = false},
+  {"catppuccin/nvim", lazy = false },
 }

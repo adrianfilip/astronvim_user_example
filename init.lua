@@ -18,10 +18,12 @@ return {
   },
 
   -- Set colorscheme to use
+  colorscheme = "gruvbox-material",
+  -- colorscheme = "tokyonight",
   --colorscheme = "catppuccin",
-  --colorscheme = "tokyonight",
   --colorscheme = "darcula-solid",
-  colorscheme = "nightfox",
+  -- colorscheme = "nightfox",
+  -- colorscheme = "everforest",
   --colorscheme = "melange",
   
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
