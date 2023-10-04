@@ -1,3 +1,4 @@
+local sysroot = vim.fn.system("rustc --print sysroot"):gsub("\n", "")
 return {
   -- Configure AstroNvim updates
   updater = {
@@ -58,6 +59,18 @@ return {
     servers = {
       -- "pyright"
     },
+    config = {
+      rust_analyzer = {
+        settings = {
+          ["rust_analyzer"] = {
+            server = {
+              -- I am setting the sysroot to make sure it's accurate when working with nix also
+              path = sysroot .. "/bin/rust-analyzer"
+            }
+          }
+        }
+      }
+    }
   },
 
   -- Configure require("lazy").setup() options
