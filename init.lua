@@ -66,7 +66,10 @@ return {
             server = {
               -- I am setting the sysroot to make sure it's accurate when working with nix also
               path = sysroot .. "/bin/rust-analyzer"
-            }
+            },
+            procMacro = {
+              enable = true
+            },
           }
         }
       }
