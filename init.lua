@@ -1,4 +1,4 @@
-local sysroot = vim.fn.system("rustc --print sysroot"):gsub("\n", "")
+local rustAnalyzerPath = vim.fn.system("which rust-analyzer"):gsub("\n", "")
 return {
   -- Configure AstroNvim updates
   updater = {
@@ -65,7 +65,7 @@ return {
           ["rust_analyzer"] = {
             server = {
               -- I am setting the sysroot to make sure it's accurate when working with nix also
-              path = sysroot .. "/bin/rust-analyzer"
+              path = rustAnalyzerPath,
             },
             cargo = {
               loadOutDirsFromCheck = true
