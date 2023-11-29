@@ -61,6 +61,8 @@ return {
     config = {
       rust_analyzer = {
         settings = {
+--if :LspInfo shows a mason rust-analyzer path delete that path.
+--(that will force it to load the rust-analyzer from the system path)
           ["rust_analyzer"] = {}
         }
       }
