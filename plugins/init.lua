@@ -7,6 +7,8 @@ require "telescope".setup {
 }
 
 return {
+  { "christoomey/vim-tmux-navigator", lazy=false },
+  -- colorschemes
   {
     "folke/tokyonight.nvim",
     lazy = false,
